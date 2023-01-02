@@ -80,7 +80,7 @@ function App() {
     }
 
     const selectFrontpage = () => {
-        setSelected(frontpage)
+        setSelected(false)
     }
 
     const selectSearched = (event) => {
