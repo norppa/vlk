@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Nunito&family=Raleway&family=Source+Sans+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #320d3e;
+}
+
+.App {
+    max-width: 500px;
+    margin: auto;
+    padding: 5px;
+}
+
+.navi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: "Acme", Arial;
+    font-size: 12pt;
+}
+
+.navi .icon {
+    font-size: 9pt;
+    margin-bottom: 1px;
+    margin: 3px;
+}
+
+.navi span {
+    display: flex;
+    align-items: center;
+}
+
+.naviBtn {
+    display: flex;
+    cursor: pointer;
+    margin: 5pt;
+}
+
+.Contents {
+    background-color: white;
+}
+
+.header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Song h1 {
+    display: inline-block;
+    color: white;
+    margin: 20px 0 12px 0;
+    height: 35px;
+}
+
+.Index {
+    margin-top: 22px;
+}
+
+.Index,
+.lyrics {
+    background-color: white;
+    padding: 8px;
+    border-radius: 3px;
+    font-family: 'Nunito';
+    white-space: break-spaces;
+    min-height: 400px;
+    width: 100%;
+}
+
+.Index {
+    min-height: 445px;
+}
+
+.selected {
+    font-weight: bold;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+li:hover {
+    background-color: gray;
+    padding-left: 5px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+img {
+    height: 60px;
+    cursor: pointer;
+}
+
+.Footer {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feedbackBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.feedbackBtn .icon {
+    margin-right: 8px;
+    font-size: 20pt;
+}
+
+.snippet {
+    font-size: 10pt;
+    padding-left: 20px;
+}
+
+.mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 420px) {
+    .App {
+        max-width: 800px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+
+    .navi .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: inherit;
+    }
+
+}
