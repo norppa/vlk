@@ -162,6 +162,33 @@ function App() {
         )
     }
 
+    const openFeedback = () => {
+        window.history.pushState(null, null)
+        setIsFeedbackOpen(true)
+    }
+
+    const closeFeedback = () => {
+        window.history.back()
+    }
+
+    const openIndex = () => {
+        window.history.pushState({ page: 'index' }, null)
+        setShowIndex(true)
+    }
+
+    const closeIndex = () => {
+        if (window.history.state.page === 'index') {
+            window.history.back()
+        }
+    }
+
+    // Handle back button clicks
+    window.onpopstate = (event) => {
+        setShowIndex(false)
+        setIsFeedbackOpen(false)
+        document.activeElement.blur()
+    }
+
     return (
         <div className='App'>
             <div className='navi'>
@@ -171,8 +198,8 @@ function App() {
                 </span>
                 <span>
                     <input
-                        onFocus={() => setShowIndex(true)}
-                        onBlur={() => setShowIndex(false)}
+                        onFocus={openIndex}
+                        onBlur={closeIndex}
                         onKeyDown={selectSearched}
                         value={search}
                         onChange={(event) => setSearch(event.target.value)}
@@ -195,7 +222,7 @@ function App() {
             <div className='Footer'>
                 <img src={logo} onMouseDown={selectFrontpage} />
                 <div className='feedbackBtn'
-                    onMouseDown={() => setIsFeedbackOpen(true)}>
+                    onMouseDown={openFeedback}>
                     <FaRegComment className='icon' />
                     <div>Palaute? Idea? <br className='mobile' />Korjausehdotus?<br />Kerro se meille!</div>
                 </div>
@@ -203,7 +230,7 @@ function App() {
             </div>
 
             <Feedback isOpen={isFeedbackOpen}
-                close={() => setIsFeedbackOpen(false)}
+                close={closeFeedback}
                 songs={songs}
                 selected={selected} />
         </div>
